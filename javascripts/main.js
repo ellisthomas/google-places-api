@@ -30,7 +30,7 @@ const apiKey = "";   //api key <=
 			.done((data) => resolve(data.result))
 			.fail((error) => reject(error));
 		});
-	}
+	};
 
 	const loadPlaces = (dropdownType) => {
 			return new Promise((resolve, reject) => {
@@ -44,7 +44,7 @@ const apiKey = "";   //api key <=
 	const writeAddressToDom = (address) => {
 		let outputString = `<div>${address}</div>`;
 		$("#addresses").append(outputString);
-	}	
+	};	
 
 	const writePlaceToDom = (results) => {
 		let outputString = "";
@@ -52,26 +52,12 @@ const apiKey = "";   //api key <=
 			outputString += `<a href"#"><div id="${results[i].place_id}" class="place">${results[i].name}</div></a>`;
 		}
 		$("#input").html(outputString);
-	}	
+	};	
 
 
 
-});
+}); //close of document.ready
 
-// let placesNames;
 
-// $("body").on("click", "li", (e) => {
-// 	console.log(e.target.innerHTML);
-// 	loadPlaces(e.target.innerHTML).then((data) => {
-// 		placesNames = data.results;
-// 		console.log(data);
-// 		placesNames.forEach((each) => {
-// 			let domString = `<p>${each.name}</p>`;
-// 		$("#placeName").append(domString);
-// 		})
-// 	}).catch((error) => {
-// 		console.log(error);
-// 	});
-// });
 
 
